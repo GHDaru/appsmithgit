@@ -1,0 +1,1 @@
+SELECT status, priority as x, COUNT(*) as y from support_ticket WHERE status = 'open' GROUP BY priority,status ORDER BY y;

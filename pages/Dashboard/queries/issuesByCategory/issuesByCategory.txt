@@ -1,0 +1,1 @@
+SELECT category as x, COUNT (*) AS y FROM support_ticket GROUP BY category;

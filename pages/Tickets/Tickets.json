@@ -1,0 +1,65 @@
+{
+  "unpublishedPage": {
+    "name": "Tickets",
+    "slug": "tickets",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 760,
+          "containerStyle": "none",
+          "snapRows": 79,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 82,
+          "minHeight": 810,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Tickets_getTickets",
+              "name": "getTickets",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Tickets_utils.getFilteredTickets",
+              "name": "utils.getFilteredTickets",
+              "collectionId": "Tickets_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const tickets = await getTickets.run();\n  const status = selStatus.selectedOptionValue;\n  const priority = selPriority.selectedOptionValue;\n  let filteredTickets = tickets;\n  if (status) {\n    filteredTickets = tickets.filter(a => a.status === status);\n  }\n  if (priority) {\n    filteredTickets = tickets.filter(a => a.priority === priority);\n  }\n  if (status && priority) {\n    filteredTickets = tickets.filter(a => {\n      return a.status === status && a.priority === priority;\n    });\n  }\n  return filteredTickets;\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Tickets",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "64c965c06d52a71d21ff9461_64c9663fba589b1d23248e62"
+}

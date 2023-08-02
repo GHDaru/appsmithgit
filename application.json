@@ -1,0 +1,24 @@
+{
+  "pages": [
+    {
+      "id": "Dashboard",
+      "isDefault": true
+    },
+    {
+      "id": "Tickets",
+      "isDefault": false
+    }
+  ],
+  "viewMode": false,
+  "appIsExample": false,
+  "unreadCommentThreads": 0,
+  "color": "#C2DAF0",
+  "icon": "earth",
+  "unpublishedCustomJSLibs": [],
+  "publishedCustomJSLibs": [],
+  "evaluationVersion": 2,
+  "applicationVersion": 2,
+  "collapseInvisibleWidgets": true,
+  "isManualUpdate": false,
+  "deleted": false
+}

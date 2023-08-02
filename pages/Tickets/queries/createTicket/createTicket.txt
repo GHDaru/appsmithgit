@@ -1,0 +1,2 @@
+INSERT INTO support_ticket ("created_at", "user", "description", "status", "priority", "category", "assigned_to")
+VALUES ('{{moment().format("LLL")}}', '{{c_user.text}}', '{{c_description.text}}', 'open', '{{c_priority.selectedOptionValue}}', '{{c_category.selectedOptionValue}}', '{{c_assignee.selectedOptionValue}}');
